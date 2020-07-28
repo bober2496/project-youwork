@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class Ship_Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Attributumoknak valtozok
+    private Transform myTransform;
+
+    //Kezeleshez valtozok
+    [SerializeField] private float shipSpeed;
+
+    //Script valtozok
+
+
+    private void Awake()
+    {
+        myTransform = transform;
+    }
+
     void Start()
     {
         
