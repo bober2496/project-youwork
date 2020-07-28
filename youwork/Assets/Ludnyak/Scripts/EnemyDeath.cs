@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour
 {
-
-
-    // Start is called before the first frame update
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "MapEdge" || collision.gameObject.name == "Laser")
+        if (collision.gameObject.name == "MapEdge"|| collision.gameObject.name=="Laser(Clone)")
 
             Destroy(gameObject, 1);
     }

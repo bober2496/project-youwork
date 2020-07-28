@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-4691381492955973089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c9a25ecc5d7154d82b03514a601273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Laser:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &3573260728237449479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +146,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

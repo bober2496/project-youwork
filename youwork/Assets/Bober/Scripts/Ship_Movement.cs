@@ -36,7 +36,7 @@ public class Ship_Movement : MonoBehaviour
             lazorPosition.Normalize();
             lazorPosition = myTransform.position - lazorPosition * 1.4f;
             GameObject newlazor = Instantiate(laser, lazorPosition, myTransform.rotation, laserContainer);
-            newlazor.GetComponent<Rigidbody>().AddForce(-lazorPosition/1.4f * laserSpeed);
+            newlazor.GetComponent<Rigidbody2D>().AddForce(-lazorPosition/1.4f * laserSpeed);
         }
     }
 
