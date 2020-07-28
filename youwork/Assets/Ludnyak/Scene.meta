@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:youwork/Assets/Ludnyak/Scene.meta
 guid: e8f63ff768eeba948b7553bc15eaaab6
+=======
+guid: e7b45cd43688ef84bbe3ae4af755d630
+>>>>>>> Bober:youwork/Assets/Bober.meta
+=======
+<<<<<<< HEAD:youwork/Assets/Ray/characters.meta
+guid: f64cc33398e184f48bb310bd49598ef7
+=======
+guid: e8f63ff768eeba948b7553bc15eaaab6
+>>>>>>> origin/Kristof:youwork/Assets/Ludnyak/Scene.meta
+>>>>>>> Bober
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
