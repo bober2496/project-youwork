@@ -1,82 +1,41 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyShipSpawn : MonoBehaviour
 {
-    private Transform myTransform;
-    [SerializeField]private GameObject enemyShip;
     
-    [SerializeField] private Transform parent;
-    private float canSpawn=0;
+    //UI
     [SerializeField] float spawnRate;
-    int db;
+    [SerializeField]private GameObject enemyShip;    
+    [SerializeField] private Transform parent;
 
+    public int EnemyCount;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        myTransform = transform;
-    }
+    //Working variables
+    public bool _canSpawnEnemyShips;
+    private Vector3 startingPosition;
+       
     private void Start()
     {
         StartCoroutine(Spawnrate());
-        
-        
     }
 
     IEnumerator Spawnrate()
     {
-        while (true) {
+        while (true) 
+        {
+            if (_canSpawnEnemyShips)
+            {
+                startingPosition.x = Mathf.Round(Random.Range(-4, 4));
+                startingPosition.y = Mathf.Round(Random.Range(-4, 4));
+                for(int i = 0; i < 10; i++)
+                {
+                    GameObject newEnemyShip = Instantiate(enemyShip, startingPosition, Quaternion.identity, parent) as GameObject;
+                    EnemyCount++;
+                    yield return new WaitForSecondsRealtime(spawnRate);
+                }                
+            }            
             yield return new WaitForSecondsRealtime(spawnRate);
-            canSpawn = 1;
-        }
-        
-        
-    }
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-        
-        if (canSpawn==1) {
-            if (db<10)
-            {
-                GameObject newEnemyShip = Instantiate(enemyShip, myTransform.position,
-                Quaternion.Euler(myTransform.rotation.x, myTransform.rotation.y, myTransform.rotation.z)) as GameObject;
-
-
-                newEnemyShip.transform.parent = parent;
-
-                canSpawn = 0;
-                db++;
-            }
-            else if (db<20 && db>=10)
-            {
-                GameObject newEnemyShip = Instantiate(enemyShip, myTransform.position+new Vector3 (-6,-2,0),
-                Quaternion.Euler(myTransform.rotation.x, myTransform.rotation.y, myTransform.rotation.z)) as GameObject;
-
-
-                newEnemyShip.transform.parent = parent;
-
-                canSpawn = 0;
-                db++;
-            }
-            else
-            {
-                GameObject newEnemyShip = Instantiate(enemyShip, myTransform.position + new Vector3(-4, 4, 0),
-                                Quaternion.Euler(myTransform.rotation.x, myTransform.rotation.y, myTransform.rotation.z)) as GameObject;
-
-
-                newEnemyShip.transform.parent = parent;
-
-                canSpawn = 0;
-                db++;
-            }
-                
-            
         }
     }
 }

@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class LaserDeath : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name=="MapEdge" )
-        {
+        if(collision.gameObject.name == "MapEdge" )
+        {            
             Destroy(gameObject);
         }
-        if (collision.gameObject.name== "enemy(Clone)")
-        {
+        if (collision.gameObject.name == "Enemy_SpaceShip(Clone)")
+        {            
+            GameObject.Find("Text").GetComponent<Scoreboard_SpaceShip_Game>().SpaceShip_Game_Score++;
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

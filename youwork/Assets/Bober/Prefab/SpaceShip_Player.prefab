@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4265721608418596995}
   - component: {fileID: 1100884309}
-  - component: {fileID: 460869916032341573}
-  - component: {fileID: 4250699664709738812}
   - component: {fileID: 2566163662447550237}
+  - component: {fileID: 4250699664709738812}
+  - component: {fileID: 3480654975819156395}
   m_Layer: 0
-  m_Name: Ship
+  m_Name: SpaceShip_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,22 +47,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipSpeed: 2
-  moveRadius: 8
+  moveRadius: 10
   laserSpeed: 5
-  laser: {fileID: 4183900774099201463, guid: 2a92af713cabdd544bcd85fef327ce3f, type: 3}
+  laser: {fileID: 7940445310784501732, guid: 5acfa1c394f25944d8987c3c1f8dc0cd, type: 3}
   laserContainer: {fileID: 0}
---- !u!114 &460869916032341573
+--- !u!114 &2566163662447550237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4265721608418596992}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dad0a5aa8ca74224b975b005fd0cb754, type: 3}
+  m_Script: {fileID: 11500000, guid: 885e11171a9f72c49bcf65f59feb7659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blowUpTime: 1
+  player_SpaceShip_died: 0
 --- !u!212 &4250699664709738812
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,15 +115,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2566163662447550237
-MonoBehaviour:
+--- !u!60 &3480654975819156395
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4265721608418596992}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dad0a5aa8ca74224b975b005fd0cb754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3, y: 0.3}
+    newSize: {x: 0.3, y: 0.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.015441034, y: 0.09075062}
+      - {x: -0.05006573, y: 0.03378071}
+      - {x: -0.09185749, y: -0.07696996}
+      - {x: -0.096547924, y: -0.09068488}
+      - {x: -0.07296438, y: -0.11654785}
+      - {x: 0.077167116, y: -0.11537524}
+      - {x: 0.100065745, y: -0.088339664}
+      - {x: 0.050816372, y: 0.027232781}
+      - {x: -0.0004219966, y: 0.11654792}
+    - - {x: -0.0063787526, y: -0.11457633}
+      - {x: -0.016547937, y: -0.037035532}
+      - {x: 0, y: 0.021304129}
+      - {x: 0.021238362, y: -0.037035532}
+      - {x: 0.072832875, y: -0.03710147}
+      - {x: 0.017786263, y: -0.036613736}
+      - {x: -0.016613666, y: -0.040750638}
+      - {x: -0.049999997, y: -0.08}

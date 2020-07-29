@@ -1,17 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy_SpaceShip_movement : MonoBehaviour
 {
     [SerializeField] float circleSpeed = 1f;
-    // Assuming negative Z is towards the camera
-    [SerializeField] float circleSize = 0.01f;
+    [SerializeField] float circleSize = 0.5f;
     [SerializeField] float circleGrowSpeed = 0.005f;
      Vector3 mypos;
     float spawnTime;
     float timeineed;
-
 
     private void Start()
     {
@@ -22,9 +18,9 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         timeineed = Time.time - spawnTime;
-        var xPos = Mathf.Sin(timeineed * circleSpeed) * circleSize;
-        var yPos = Mathf.Cos(timeineed *  circleSpeed) * circleSize;
-        circleSize += circleGrowSpeed;
+        float xPos = Mathf.Sin(timeineed * circleSpeed) * circleSize;
+        float yPos = Mathf.Cos(timeineed *  circleSpeed) * circleSize;
+        circleSize += circleGrowSpeed * Time.deltaTime;
         transform.position = new Vector3(-xPos , -yPos , mypos.z)+ mypos;
     }
 

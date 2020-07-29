@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ship_Movement : MonoBehaviour
+public class SpaceShipController_script : MonoBehaviour
 {
     //Attributumoknak valtozok
     private Transform myTransform;
@@ -25,18 +25,18 @@ public class Ship_Movement : MonoBehaviour
 
     void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
-
-        Debug.DrawLine(new Vector3(-10, 0, 0), new Vector3(10, 0, 0), Color.white);
-        Debug.DrawLine(new Vector3(0, -10, 0), new Vector3(0, 10, 0), Color.white);
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!GetComponent<SpaceShip_death>().player_SpaceShip_died)
         {
-            Vector3 lazorPosition = myTransform.position;
-            lazorPosition.Normalize();
-            lazorPosition = myTransform.position - lazorPosition * 1.4f;
-            GameObject newlazor = Instantiate(laser, lazorPosition, myTransform.rotation, laserContainer);
-            newlazor.GetComponent<Rigidbody2D>().AddForce(-lazorPosition/1.4f * laserSpeed);
+            xInput = Input.GetAxisRaw("Horizontal");
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Vector3 lazorPosition = myTransform.position;
+                lazorPosition.Normalize();
+                lazorPosition = myTransform.position - lazorPosition * 1.4f;
+                GameObject newlazor = Instantiate(laser, lazorPosition, myTransform.rotation, laserContainer);
+                newlazor.GetComponent<Rigidbody2D>().AddForce(-lazorPosition / 1.4f * laserSpeed);
+            }
         }
     }
 

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ship_Shooting : MonoBehaviour
+public class DEBUG_TOOL : MonoBehaviour
 {
+
+    public float SetTimeScale;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class Ship_Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Time.timeScale = SetTimeScale;
     }
 }
