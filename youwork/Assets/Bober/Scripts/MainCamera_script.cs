@@ -16,7 +16,7 @@ public class MainCamera_script : MonoBehaviour
     }
     private void Start()
     {
-        _mainCameraFollowing = GameObject.Find("RageMan").GetComponent<Transform>();
+        _mainCameraFollowing = GameObject.Find("Timothy Torpido").GetComponent<Transform>();
     }
 
     void Update()
