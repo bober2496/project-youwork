@@ -6,13 +6,12 @@ public class EnemyShipSpawn : MonoBehaviour
     
     //UI
     [SerializeField] float spawnRate;
-    [SerializeField]private GameObject enemyShip;    
-    [SerializeField] private Transform parent;
+    [SerializeField]private GameObject enemyShip;
 
     public int EnemyCount;
 
     //Working variables
-    public bool _canSpawnEnemyShips;
+    public bool _canSpawnEnemyShips = true;
     private Vector3 startingPosition;
        
     private void Start()
@@ -30,7 +29,7 @@ public class EnemyShipSpawn : MonoBehaviour
                 startingPosition.y = Mathf.Round(Random.Range(-4, 4));
                 for(int i = 0; i < 10; i++)
                 {
-                    GameObject newEnemyShip = Instantiate(enemyShip, startingPosition, Quaternion.identity, parent) as GameObject;
+                    GameObject newEnemyShip = Instantiate(enemyShip, startingPosition, Quaternion.identity, transform) as GameObject;
                     EnemyCount++;
                     yield return new WaitForSecondsRealtime(spawnRate);
                 }                

@@ -12,7 +12,7 @@ public class LaserDeath : MonoBehaviour
         }
         if (collision.gameObject.name == "Enemy_SpaceShip(Clone)")
         {            
-            GameObject.Find("Text").GetComponent<Scoreboard_SpaceShip_Game>().SpaceShip_Game_Score++;
+            GameObject.Find("Scoreboard").GetComponent<Scoreboard_SpaceShip_Game>().SpaceShip_Game_Score++;
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
