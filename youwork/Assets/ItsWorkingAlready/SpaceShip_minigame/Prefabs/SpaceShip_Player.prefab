@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7078306569775367640
+--- !u!1 &4265721608418596992
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,70 +8,70 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2137339921882871616}
-  - component: {fileID: 3573260728237449479}
-  - component: {fileID: 7911210658549595396}
-  - component: {fileID: 217557834697574031}
-  - component: {fileID: -5251496635160224702}
-  - component: {fileID: 7757254120358316777}
-  - component: {fileID: -4467326577556060821}
+  - component: {fileID: 4265721608418596995}
+  - component: {fileID: 1100884309}
+  - component: {fileID: 2566163662447550237}
+  - component: {fileID: 4250699664709738812}
+  - component: {fileID: 3480654975819156395}
   m_Layer: 0
-  m_Name: Enemy_SpaceShip
+  m_Name: SpaceShip_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2137339921882871616
+--- !u!4 &4265721608418596995
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078306569775367640}
+  m_GameObject: {fileID: 4265721608418596992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3573260728237449479
+--- !u!114 &1100884309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078306569775367640}
+  m_GameObject: {fileID: 4265721608418596992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58984d7f6007754c897a3aef6256c64, type: 3}
+  m_Script: {fileID: 11500000, guid: 604302280ec75e64ca78647393007040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleSpeed: 1.2
-  circleSize: 1
-  circleGrowSpeed: 0.5
---- !u!114 &7911210658549595396
+  shipSpeed: 0
+  moveRadius: 0
+  laserSpeed: 0
+  laser: {fileID: 0}
+  laserContainer: {fileID: 0}
+--- !u!114 &2566163662447550237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078306569775367640}
+  m_GameObject: {fileID: 4265721608418596992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11c9a25ecc5d7154d82b03514a601273, type: 3}
+  m_Script: {fileID: 11500000, guid: eba362ed4b0fd2144a90bf469e88b56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canDie: 1
-  blowUpTime: 0.5
---- !u!212 &217557834697574031
+  blowUpTime: 1
+  player_SpaceShip_died: 0
+--- !u!212 &4250699664709738812
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078306569775367640}
+  m_GameObject: {fileID: 4265721608418596992}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c88b2c5015c22a0438237d513b2e6235, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0239e2109246f6049869747afeeae619, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,38 +115,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-5251496635160224702
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078306569775367640}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!60 &7757254120358316777
+--- !u!60 &3480654975819156395
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078306569775367640}
+  m_GameObject: {fileID: 4265721608418596992}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -161,35 +140,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.012308597, y: 0.114617206}
-      - {x: -0.13205342, y: -0.0038456903}
-      - {x: -0.13333529, y: -0.010261095}
-      - {x: -0.018462934, y: -0.11948961}
-      - {x: 0.020005932, y: -0.123335294}
-      - {x: 0.11282494, y: -0.026925791}
-      - {x: 0.13333529, y: -0.0012818918}
-      - {x: 0.02205342, y: 0.114617206}
-    - - {x: -0.02, y: 0.049999997}
-      - {x: 0, y: 0.07}
-      - {x: 0.02, y: 0.049999997}
-      - {x: 0, y: 0.03}
-      - {x: 0, y: 0.04}
---- !u!95 &-4467326577556060821
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078306569775367640}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: de02f5f6195d79a428737cd3032a3edd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+    - - {x: -0.015441034, y: 0.09075062}
+      - {x: -0.05006573, y: 0.03378071}
+      - {x: -0.09185749, y: -0.07696996}
+      - {x: -0.096547924, y: -0.09068488}
+      - {x: -0.07296438, y: -0.11654785}
+      - {x: 0.077167116, y: -0.11537524}
+      - {x: 0.100065745, y: -0.088339664}
+      - {x: 0.050816372, y: 0.027232781}
+      - {x: -0.0004219966, y: 0.11654792}
+    - - {x: -0.0063787526, y: -0.11457633}
+      - {x: -0.016547937, y: -0.037035532}
+      - {x: 0, y: 0.021304129}
+      - {x: 0.021238362, y: -0.037035532}
+      - {x: 0.072832875, y: -0.03710147}
+      - {x: 0.017786263, y: -0.036613736}
+      - {x: -0.016613666, y: -0.040750638}
+      - {x: -0.049999997, y: -0.08}
