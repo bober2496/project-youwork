@@ -1,32 +1,41 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyShipSpawn : MonoBehaviour
 {
-    private Transform myTransform;
-    [SerializeField]private GameObject enemyShip;
-    [SerializeField] private float speed;
+    
+    //UI
+    [SerializeField] float spawnRate;
+    [SerializeField]private GameObject enemyShip;    
     [SerializeField] private Transform parent;
 
+    public int EnemyCount;
 
-    // Start is called before the first frame update
-    void Awake()
+    //Working variables
+    public bool _canSpawnEnemyShips;
+    private Vector3 startingPosition;
+       
+    private void Start()
     {
-        myTransform = transform;
+        StartCoroutine(Spawnrate());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Spawnrate()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        while (true) 
         {
-            
-            GameObject newEnemyShip = Instantiate(enemyShip, myTransform.position,
-                Quaternion.Euler(myTransform.rotation.x, myTransform.rotation.y, myTransform.rotation.z )) as GameObject;
-
-          
-            newEnemyShip.transform.parent = parent;
+            if (_canSpawnEnemyShips)
+            {
+                startingPosition.x = Mathf.Round(Random.Range(-4, 4));
+                startingPosition.y = Mathf.Round(Random.Range(-4, 4));
+                for(int i = 0; i < 10; i++)
+                {
+                    GameObject newEnemyShip = Instantiate(enemyShip, startingPosition, Quaternion.identity, parent) as GameObject;
+                    EnemyCount++;
+                    yield return new WaitForSecondsRealtime(spawnRate);
+                }                
+            }            
+            yield return new WaitForSecondsRealtime(spawnRate);
         }
     }
 }

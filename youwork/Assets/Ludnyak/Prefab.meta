@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:youwork/Assets/Bober/Prefab.meta
-guid: 096db98498bb2664db9cc9b3b93d04f4
-=======
+<<<<<<< HEAD:youwork/Assets/Ludnyak/Prefab.meta
 guid: b25db8d5d11ef304bb3d361cd662b932
->>>>>>> origin/Kristof:youwork/Assets/Ludnyak/Prefab.meta
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 2a92af713cabdd544bcd85fef327ce3f
+PrefabImporter:
+>>>>>>> Bober:youwork/Assets/Bober/Prefab/Laser.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
