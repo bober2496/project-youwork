@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 31415f74205645842ae9f5896dbbeed1
-=======
-<<<<<<< HEAD:youwork/Assets/Ludnyak/Scripts/EnemyDeath.cs.meta
-guid: 11c9a25ecc5d7154d82b03514a601273
-=======
-guid: 31415f74205645842ae9f5896dbbeed1
->>>>>>> master:youwork/Assets/Ludnyak/Scripts/EnemyShipSpawn.cs.meta
->>>>>>> master
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

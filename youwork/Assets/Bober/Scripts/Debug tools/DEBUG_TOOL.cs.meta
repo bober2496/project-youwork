@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:youwork/Assets/Bober/Scripts/Debug tools/DEBUG_TOOL.cs.meta
 guid: 785415c2a404f0249acadc444f5c4f95
+=======
+guid: 31415f74205645842ae9f5896dbbeed1
+>>>>>>> origin/ray:youwork/Assets/Ludnyak/Scripts/EnemyShipSpawn.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

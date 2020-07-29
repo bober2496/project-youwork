@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:youwork/Assets/Bober/Scenes/Office_map01.unity.meta
 guid: 716f3fd2e7bdfc349b2ed66aaf52183b
 DefaultImporter:
+=======
+guid: eb3a3473269cc9d48978c02d39caa586
+PrefabImporter:
+>>>>>>> origin/ray:youwork/Assets/Bober/Prefab/Ship.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
