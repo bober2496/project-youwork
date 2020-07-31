@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD:youwork/Assets/Bober.meta
-guid: e7b45cd43688ef84bbe3ae4af755d630
-=======
-guid: c2cb8cecd3a55f24b9b5e54cc8b9edce
->>>>>>> master:youwork/Assets/Bober/Animations.meta
-=======
 <<<<<<< HEAD
 guid: e7b45cd43688ef84bbe3ae4af755d630
 =======
@@ -15,7 +9,13 @@ guid: e8f63ff768eeba948b7553bc15eaaab6
 guid: e7b45cd43688ef84bbe3ae4af755d630
 >>>>>>> Bober:youwork/Assets/Bober.meta
 >>>>>>> Bober
->>>>>>> master
+=======
+<<<<<<< HEAD:youwork/Assets/Bober/Animations.meta
+guid: c2cb8cecd3a55f24b9b5e54cc8b9edce
+=======
+guid: e7b45cd43688ef84bbe3ae4af755d630
+>>>>>>> origin/ray:youwork/Assets/Bober.meta
+>>>>>>> origin/ray
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
