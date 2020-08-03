@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovementSpeed: 2
   runningMovementSpeed: 4
-  _RageMan_MovementSpeedModifier: 1
   jumpLength: 1.5
+  _RageMan_MovementSpeedModifier: 1
 --- !u!114 &4157243411240116517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4603468373705415319}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4639288a66f28442b06e509dd272aa0, type: 3}
   m_Name: 
@@ -70,7 +70,7 @@ MonoBehaviour:
   frustratedLimit: 0
   depressionLimit: 0
   bulletSpeed: 6
-  timeBetweenAutoShots: 0
+  timeBetweenAutoShots: 2
   bulletSpawnOffset: {x: 0, y: 0, z: 0}
   _rageMeter: 0
   _rageType: 0

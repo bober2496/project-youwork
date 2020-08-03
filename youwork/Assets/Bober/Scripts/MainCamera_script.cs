@@ -6,7 +6,7 @@ public class MainCamera_script : MonoBehaviour
     private Transform mainCamTransform;
     public Transform _mainCameraFollowing;
 
-    //UI
+    //Inspector
     [SerializeField] private float Smoothness = 0.2f;
     [SerializeField] private Vector3 cameraOffset = new Vector3(0f, 0f, 10f);
 

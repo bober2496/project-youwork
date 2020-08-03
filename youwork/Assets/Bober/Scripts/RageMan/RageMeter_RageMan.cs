@@ -1,14 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RageMeter_RageMan : MonoBehaviour
 {
     //GameObjects
-    private Transform myTransform;
     private Camera mainCamera;
 
-    //UI
+    //Inspector
     [SerializeField] private GameObject bulletObj;
     [SerializeField] private Transform bulletParent;
     [SerializeField] private int fullRageLimit, frustratedLimit, depressionLimit;
@@ -22,74 +20,59 @@ public class RageMeter_RageMan : MonoBehaviour
     private float calcRotation;
     private Vector2 shootPosDiff;
 
-    IEnumerator DoShooting()
-    {
-        while (true)
-        {
-            if (autoShoot)
-            {
-                GameObject newBullet = Instantiate(bulletObj, myTransform.position + bulletSpawnOffset,
-                Quaternion.Euler(myTransform.rotation.x, myTransform.rotation.y, myTransform.rotation.z + calcRotation +90), bulletParent) as GameObject;
-                newBullet.GetComponent<Rigidbody2D>().AddForce(shootPosDiff * bulletSpeed);
-            }
-            yield return new WaitForSeconds(timeBetweenAutoShots);
-        }
-    }
-
     private void Awake()
     {
-        myTransform = transform;
         mainCamera = Camera.main;
     }
     void Start()
     {
-        shootPosDiff = mainCamera.ScreenToWorldPoint(Input.mousePosition) - myTransform.position;
-        shootPosDiff.Normalize();
-        calcRotation = Mathf.Atan2(shootPosDiff.y, shootPosDiff.x) * Mathf.Rad2Deg;
+        CalculateForShooting();
         StartCoroutine(DoShooting());
     }
 
     // Update is called once per frame
     void Update()
     {
-        shootPosDiff = mainCamera.ScreenToWorldPoint(Input.mousePosition) - myTransform.position;
-        shootPosDiff.Normalize();
-        calcRotation = Mathf.Atan2(shootPosDiff.y, shootPosDiff.x) * Mathf.Rad2Deg;
-        Debug.DrawRay(myTransform.position, shootPosDiff, Color.red);
+        CalculateForShooting();
 
         if(_rageMeter >= fullRageLimit)
         {   //FUll rage phase
             autoShoot = true;
-            //timeBetweenAutoShots == 10;
-
-
+            //timeBetweenAutoShots == 0.7f;
 
         }
         else if(_rageMeter >= frustratedLimit)
         {   //Frustrated phase
 
-
-
-
-
         }
         else if(_rageMeter > depressionLimit)
         {   //Depression phase
-
-
-
-
-
 
         }
         else
         {   //Calm phase
 
+        }
+    }
 
+    private void CalculateForShooting()
+    {
+        shootPosDiff = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        shootPosDiff.Normalize();
+        calcRotation = Mathf.Atan2(shootPosDiff.y, shootPosDiff.x) * Mathf.Rad2Deg;
+    }
 
-
-
-
+    IEnumerator DoShooting()
+    {
+        while (true)
+        {
+            if (autoShoot)
+            {
+                GameObject newBullet = Instantiate(bulletObj, transform.position + bulletSpawnOffset,
+                Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + calcRotation + 90), bulletParent) as GameObject;
+                newBullet.GetComponent<Rigidbody2D>().AddForce(shootPosDiff * bulletSpeed * 100);
+            }
+            yield return new WaitForSeconds(timeBetweenAutoShots);
         }
     }
 }
