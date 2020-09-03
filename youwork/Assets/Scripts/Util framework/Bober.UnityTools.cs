@@ -1,4 +1,5 @@
 ﻿using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 namespace Bober.UnityTools
@@ -113,16 +114,10 @@ namespace Bober.UnityTools
         }
 
         //Get the mouse position in the world
-        public static Vector3 GetMouseWorldPosition2D(float zOffset = 0f)
+        public static Vector3 GetMouseWorldPosition2D()
         {
             Vector3 position = GetMouseWorldPosition3D();
-            position.z = zOffset;
-            return position;
-        }
-        public static Vector3 GetMouseWorldPosition2D(Camera camera, float zOffset = 0f)
-        {
-            Vector3 position = GetMouseWorldPosition3D(camera);
-            position.z = zOffset;
+            position.z = 0f;
             return position;
         }
         public static Vector3 GetMouseWorldPosition3D()
