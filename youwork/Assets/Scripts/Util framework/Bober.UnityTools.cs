@@ -120,6 +120,12 @@ namespace Bober.UnityTools
             position.z = 0f;
             return position;
         }
+        public static Vector3 GetMouseWorldPosition2D(Camera camera)
+        {
+            Vector3 position = GetMouseWorldPosition3D(camera);
+            position.z = 0f;
+            return position;
+        }
         public static Vector3 GetMouseWorldPosition3D()
         {
             return GetMouseWorldPosition3D(Camera.main);
